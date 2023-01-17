@@ -25,6 +25,9 @@
 	%>
 	<%
 		try {
+			
+			
+			
 			Class.forName(driverName);//드라이버 불러오기	
 			
 			conn = DriverManager.getConnection(url, username, password);//DB 연동
@@ -32,7 +35,6 @@
 			stmt = conn.createStatement();
 			
 			rs = stmt.executeQuery(sql); // select문이 반환하는 레코드 저장
-			
 			
 			while(rs.next()){
 				String db_id = rs.getString("id");
@@ -42,8 +44,8 @@
 				String db_jointime = rs.getString("jointime");
 				 
 				out.println(db_id+"/ "+db_pw+"/ "+db_name+"/ "+db_email+"/ "+db_jointime+"<br>");
-				
-			}
+			
+			}	
 			
 			
 	
